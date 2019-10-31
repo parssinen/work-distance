@@ -1,0 +1,28 @@
+{
+  "name": "WDC",
+  "version": "1.0",
+  "description": "Calculate distance between workplace and etuovi listing",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "declarativeContent",
+    "activeTab",
+    "https://maps.googleapis.com/*"
+  ],
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["https://www.etuovi.com/kohde/*"]
+    }
+  ],
+  "background": {
+    "scripts": ["main.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": {
+      "32": "images/map-location.png"
+    }
+  }
+}
